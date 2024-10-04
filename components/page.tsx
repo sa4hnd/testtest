@@ -11,7 +11,7 @@ export function Page() {
         <header className="py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Image src="/logos/gem.png" alt="Gems Logo" width={24} height={24} />
-            <span className="text-lg font-semibold">Gems</span>
+            <span className="text-lg font-semibold">Sahnd</span>
           </div>
           <nav className="hidden md:flex space-x-6">
             {['Pricing', 'Privacy', 'Terms'].map((item) => (
@@ -48,7 +48,7 @@ export function Page() {
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-pink-600 rounded-full blur-xl opacity-50"></div>
             <button className="bg-pink-600 text-white px-8 py-4 rounded-full text-lg md:text-xl font-semibold hover:bg-pink-700 transition-colors relative z-10 shadow-lg overflow-hidden group">
-              <span className="relative z-10">GET STARTED FOR FREE →</span>
+              <span className="relative z-10">Sahind Hamzani →</span>
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
               <span className="absolute inset-0 border-2 border-white rounded-full opacity-25 animate-spin-slow"></span>
               <span className="absolute inset-0 -z-10 bg-gradient-radial from-pink-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -95,7 +95,7 @@ export function Page() {
           <div className="text-center">
             <h2 className="text-3xl font-semibold text-white mb-4">Remember anything.<br/>Just ask a question.</h2>
             <p className="text-gray-400 text-lg">
-              Gems is the shortcut for all your knowledge. Just summon Gems and ask any question.
+              Sahnd is the shortcut for all your knowledge. Just summon Gems and ask any question.
             </p>
           </div>
 
@@ -196,7 +196,7 @@ export function Page() {
           <div className="flex flex-wrap justify-between items-center">
             <div className="flex items-center space-x-2">
               <Image src="/logos/gem.png" alt="Gems Logo" width={24} height={24} />
-              <span className="text-lg font-semibold text-white">Gems</span>
+              <span className="text-lg font-semibold text-white">Sahnd</span>
             </div>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</Link>
