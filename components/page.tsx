@@ -155,7 +155,7 @@ export function Page() {
               <div>
                 <h3 className="text-white text-lg font-semibold">Easy to set up.</h3>
                 <p className="text-gray-400">
-                  Connect your tools in seconds. It's zero upkeep from here.
+                  Connect your tools in seconds. It&apos;s zero upkeep from here.
                 </p>
               </div>
             </div>
