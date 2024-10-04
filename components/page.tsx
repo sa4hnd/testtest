@@ -2,8 +2,15 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import SocialMediaPopup from './SocialMediaPopup'
 
 export function Page() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
+
+  const openPopup = () => setIsPopupOpen(true)
+  const closePopup = () => setIsPopupOpen(false)
+
   return (
     <div dir="rtl" className="min-h-screen bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] text-white font-sans overflow-x-hidden">
       <div className="max-w-full mx-auto">
@@ -50,7 +57,10 @@ export function Page() {
             </p>
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-pink-600 rounded-full blur-xl opacity-50"></div>
-              <button className="bg-pink-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-full text-base md:text-lg font-semibold hover:bg-pink-700 transition-colors relative z-10 shadow-lg overflow-hidden group">
+              <button 
+                onClick={openPopup}
+                className="bg-pink-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-base font-semibold hover:bg-pink-700 transition-colors relative z-10 shadow-lg overflow-hidden group"
+              >
                 <span className="relative z-10">← MNK </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
                 <span className="absolute inset-0 border-2 border-white rounded-full opacity-25 animate-spin-slow"></span>
@@ -105,9 +115,9 @@ export function Page() {
             <div className="grid grid-cols-1 gap-8">
               {[
                 { title: "پتر ژ چاککرنەکێ", image: "/answers.png", description: "خزمەتگوزاریێن مە ژ چاککرنێ دەرباز دبن، ئەم پێشکێشی چارەسەریێن تەمام دکەین" },
-                { title: "ب زمانێ خۆ داخواز بکە", image: "/cpu.png", description: "تو دشێی ب زمانێ خۆ یێ ئاسایی داخوازا خزمەتگوزاریان بکەی، بێ پێدڤی ب زاراڤێن تەکنیکی" },
-                { title: "بەرسڤێن دەستبجێ وەرگرە", image: "/sahnd.png", description: "سیستەمێ مە یێ پێشکەفتی دێ بەرسڤان ب لەزترین دەم پێشکێش کەت" },
-                { title: "ژێدەران ژ دەست نەدە", image: "/hardware.jpg", description: "هەمی ژێدەر و زانیاری دێ ب رێکوپێکی هێنە پاراستن، تو چ تشت ژ دەست نادەی" }
+                { title: "ئامادە یی دەستپێکرنێ", image: "/cpu.png", description: " ئەڤرۆ پەیوەندیێ ب مە بکە و بهێلە ئەم ئاستەنگیێن ئامیرێن تە چارەسەر بکەین. لەز، باوەرپێکری، و بێ سەرئێشی " },
+                { title: "بەرسڤێن بلەز وەرگرە", image: "/sahnd.png", description: "سیستەمێ مە یێ پێشکەفتی دێ بەرسڤان ب لەزترین دەم پێشکێش کەت" },
+                { title: "خزمەتگوزاری", image: "/hardware.jpg", description: "گەلەک جاران تە تاقی کر؟ چاککرنێن خراب تە ماندی کر؟ ل MNK، ئەم د جودانە رازیبوونا تە، ئارمانجا مەیە!" }
               ].map((section, index) => (
                 <div key={index} className="rounded-2xl overflow-visible relative group">
                   <div className="absolute -inset-0.5 bg-white/10 rounded-[18px] opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -134,9 +144,9 @@ export function Page() {
                   <path fillRule="evenodd" d="M6.32 2.577a49.255 49.255 0 0111.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 01-1.085.67L12 18.089l-7.165 3.583A.75.75 0 013.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h3 className="text-white text-lg font-semibold">بیرهاتن هەر تشتەکی.</h3>
+                  <h3 className="text-white text-lg font-semibold">چاککرنا ب لەز </h3>
                   <p className="text-gray-400">
-                    ب لەزاتی. و بێ بارگرانیا هزری.
+                    ئەم دزانین دەم گرانبهایە. لەوما ئەم گەرەنتیا چاککرنا لەز ددەین بێ کێمکرنا کوالیتێ
                   </p>
                 </div>
               </div>
@@ -145,9 +155,11 @@ export function Page() {
                   <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h3 className="text-white text-lg font-semibold">سادە بۆ بکارئینانێ.</h3>
+                  <h3 className="text-white text-lg font-semibold">بهایێن گونجای</h3>
                   <p className="text-gray-400">
-                    بەرسڤا گونجای تنێ ب ئێک پرسیارێ ڤەیە.
+                     خزمەتا بلند کوالیتە نابیت پارێن تە هەمی ببەت. ئەم بهایێن زەلال و رکەبەر پێشکێش دکەین بۆ هەمی پێدڤیێن چاککرنێ
+
+
                   </p>
                 </div>
               </div>
@@ -156,10 +168,10 @@ export function Page() {
                   <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clipRule="evenodd" />
                 </svg>
                 <div>
-                  <h3 className="text-white text-lg font-semibold">هۆسان بۆ دامەزراندنێ.</h3>
+                  <h3 className="text-white text-lg font-semibold">شارەزایی - پسپۆری</h3>
                   <p className="text-gray-400">
-                    ئامرازێن خۆ د چەند چرکان دا گرێبدە. ژ ڤێرێ و پێڤە چ چاڤدێری ناڤێت.
-                  </p>
+                  دەستێن مە د شارەزانە
+هەر ئامیرەک دێ ساخکەینەڤە </p>
                 </div>
               </div>
             </div>
@@ -167,10 +179,9 @@ export function Page() {
             <div className="py-12"></div>
 
             <div className="text-center">
-              <h2 className="text-3xl font-semibold text-white mb-4">پتر بەرسڤ.<br/>ئێدی رێکخستن نەڤێت.</h2>
-              <p className="text-gray-400 text-lg">
-                بەرسڤێن ئامادەکری و یەکگرتی وەرگرە، ل سەر بنگەهێ هەمی زانینێن تە و تیما تە.
-              </p>
+              <h2 className="text-3xl font-semibold text-white mb-4">ل MNK هوین شاهێن مەنە<br/>ئامیرێن وە، بەرپرسیارا مەنە<br/>ب لەز وەرن، دەرگەه ڤەکرینە<br/>چاککرنا هەری باش، مافێ وەنە!
+              </h2>
+          
             </div>
           </div>
 
@@ -184,11 +195,13 @@ export function Page() {
                 <div className="absolute inset-0 bg-gradient-radial from-pink-500/50 to-transparent blur-2xl"></div>
               </div>
               <h2 className="text-3xl font-bold mb-4 text-white">
-                دەست پێ بکە ب کۆمکرنا<br />
-                گەوهەران ئەڤرۆ.
+              ئەڤرۆ پەیوەندیێ بکە
               </h2>
-              <button className="bg-[#222222] text-white px-6 py-3 rounded-lg text-sm font-semibold hover:bg-[#333333] transition-colors shadow-lg border border-gray-700 relative overflow-hidden group">
-                <span className="relative z-10">دەست پێ بکە بێ بەرامبەر ←</span>
+              <button 
+                onClick={openPopup}
+                className="bg-[#222222] text-white px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-semibold hover:bg-[#333333] transition-colors shadow-lg border border-gray-700 relative overflow-hidden group"
+              >
+                <span className="relative z-10">← MNK - REPAIRS </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </button>
             </div>
@@ -208,6 +221,9 @@ export function Page() {
           </footer>
         </div>
       </div>
+
+      {/* Social Media Popup */}
+      <SocialMediaPopup isOpen={isPopupOpen} onClose={closePopup} />
     </div>
   )
 }
