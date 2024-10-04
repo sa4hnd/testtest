@@ -20,9 +20,19 @@ export const viewport: Viewport = {
 // You can override them in each page passing params to getSOTags() function.
 export const metadata = getSEOTags();
 
+import { Plus_Jakarta_Sans } from 'next/font/google';
+
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+});
+
+import '@fontsource/plus-jakarta-sans/400.css';
+import '@fontsource/plus-jakarta-sans/700.css';
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme={config.colors.theme} className={font.className}>
+    <html lang="en" className={`${plusJakartaSans.variable} font-sans`}>
       {config.domainName && (
         <head>
           <PlausibleProvider domain={config.domainName} />
