@@ -1,40 +1,40 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
+import { ReactNode } from "react";
+import { Viewport } from "next";
+import PlausibleProvider from "next-plausible";
+import { getSEOTags } from "@/libs/seo";
+import ClientLayout from "@/components/LayoutClient";
+import config from "@/config";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] });
+import { Plus_Jakarta_Sans } from 'next/font/google';
 
-export const metadata: Metadata = {
-  title: 'MNK - Your Trusted Device Repair Service',
-  description: 'Fast, reliable, and affordable device repair services for computers, laptops, smartphones, and tablets.',
-  openGraph: {
-    title: 'MNK - Your Trusted Device Repair Service',
-    description: 'Fast, reliable, and affordable device repair services for computers, laptops, smartphones, and tablets.',
-    images: [
-      {
-        url: 'https://yourdomain.com/twitter-image.png', // Replace with your actual domain
-        width: 1200,
-        height: 630,
-        alt: 'MNK Repairs Preview',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'MNK - Your Trusted Device Repair Service',
-    description: 'Fast, reliable, and affordable device repair services for computers, laptops, smartphones, and tablets.',
-    images: ['https://yourdomain.com/twitter-image.png'], // Replace with your actual domain
-  },
+const plusJakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+});
+
+import '@fontsource/plus-jakarta-sans/400.css';
+import '@fontsource/plus-jakarta-sans/700.css';
+
+export const viewport: Viewport = {
+  themeColor: config.colors.main,
+  width: "device-width",
+  initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const metadata = getSEOTags();
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${plusJakartaSans.variable} font-sans`}>
+      {config.domainName && (
+        <head>
+          <PlausibleProvider domain={config.domainName} />
+        </head>
+      )}
+      <body>
+        <ClientLayout>{children}</ClientLayout>
+      </body>
     </html>
   );
 }
