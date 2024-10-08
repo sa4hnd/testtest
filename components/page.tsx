@@ -228,7 +228,6 @@ export function Page() {
         دیزاین و دروستکرن ژلایێ @sahnd.hamzani ڤە
       </Link>
     </div>
-  </div>
 </footer>
 
       {/* Social Media Popup */}
