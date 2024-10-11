@@ -52,7 +52,7 @@ export function Page() {
               </div>
             </h1>
             <p className="text-gray-400 text-base md:text-lg lg:text-xl mb-8 md:mb-12 relative z-10 max-w-3xl mx-auto px-4">
-            ئەم شارەزایێن هەوە نە بۆ خزمەتێن چاککرنا ئامیران ب لەز، باوەرپێکری، و ب نرخەکێ گونجای. ژ کۆمپیوتەرێن سەر مێزێ و لاپتۆپان ، ئەم کارکرنا وان ڤەدگەرینین دا هوین بەرهەمدار و گرێدای بمینن.
+            ئەم شارەزایێن هەوە نە بۆ خزمەتێن چاککرنا ئامیران ب لەز، باوەرپێکری، و ب نرخەکێ گونجای. ژ کۆمپیوتەرێن سەر مێزێ و لاپتۆپان هتد، ئەم کارکرنا وان ڤەدگەرینین دا هوین بەرهەمدار و گرێدای بمینن.
             .
             </p>
             <div className="relative inline-block">
@@ -208,27 +208,19 @@ export function Page() {
           </section>
 
           {/* Footer */}
-      {/* Footer */}
-<footer className="py-8 border-t border-gray-800">
-  <div className="flex flex-wrap justify-between items-end">
-    <div className="flex items-center -mr-20 -mb-8">
-      <Image src="/logos/gem.png" alt="لۆگۆیێ MNK" width={220} height={220} />
-    </div>
-    <div className="flex flex-col items-end space-y-4">
-      <div className="flex space-x-4">
-        <Link href="#" className="text-gray-400 hover:text-white transition-colors">نهێنیپارێزی</Link>
-        <Link href="#" className="text-gray-400 hover:text-white transition-colors">مەرج</Link>
+          <footer className="py-8 border-t border-gray-800">
+            <div className="flex flex-wrap justify-between items-end">
+              <div className="flex items-center -mr-20 -mb-8">
+                <Image src="/logos/gem.png" alt="لۆگۆیێ MNK" width={220} height={220} />
+              </div>
+              <div className="flex space-x-4">
+                <Link href="#" className="text-gray-400 hover:text-white transition-colors">نهێنیپارێزی</Link>
+                <Link href="#" className="text-gray-400 hover:text-white transition-colors">مەرج</Link>
+              </div>
+            </div>
+          </footer>
+        </div>
       </div>
-      <Link 
-        href="https://instagram.com/sahnd.hamzani" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="text-gray-400 hover:text-pink-400 transition-colors text-sm"
-      >
-        دیزاین و دروستکرن ژلایێ @sahnd.hamzani ڤە
-      </Link>
-    </div>
-</footer>
 
       {/* Social Media Popup */}
       <SocialMediaPopup isOpen={isPopupOpen} onClose={closePopup} />
